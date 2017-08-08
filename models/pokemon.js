@@ -11,7 +11,6 @@ let monSchema = new Schema({
   },
   caughtPokemon: {
     type: Boolean,
-    required: true,
     default: false
   },
   isWonder: {
@@ -20,7 +19,6 @@ let monSchema = new Schema({
   },
   dateCaught: {
     type: Date,
-    default: Date.now
   }
 });
 

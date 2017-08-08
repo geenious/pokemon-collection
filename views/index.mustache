@@ -9,9 +9,69 @@
     <img src="./images/Pokemon.png" alt="catch em all">
     <h1>Submit a Pokemon</h1>
     <form action='/' method='post'>
+      <p>Pokemon Name</p>
       <input type='text' name='name'>
+      <p>Did you catch this pokemon?</p>
+      <input type='radio' name='caughtPokemon' value='true'>
+      <label>Yes</label>
+      <input type='radio' name='caughtPokemon' value='false'>
+      <label>No</label>
+      <div id='checkboxes'>
+        <p>What types are your pokemon? (select up to 2)</p>
+        <input type='checkbox' name='type' value='Grass'>
+        <label>Grass</label>
+        <input type='checkbox' name='type' value='Poison'>
+        <label>Poison</label>
+        <input type='checkbox' name='type' value='Fire'>
+        <label>Fire</label>
+        <input type='checkbox' name='type' value='Flying'>
+        <label>Flying</label>
+        <input type='checkbox' name='type' value='Water'>
+        <label>Water</label>
+        <input type='checkbox' name='type' value='Bug'>
+        <label>Bug</label>
+        <input type='checkbox' name='type' value='Normal'>
+        <label>Normal</label>
+        <input type='checkbox' name='type' value='Ground'>
+        <label>Ground</label>
+        <input type='checkbox' name='type' value='Electric'>
+        <label>Electric</label>
+        <input type='checkbox' name='type' value='Fairy'>
+        <label>Fairy</label>
+        <input type='checkbox' name='type' value='Psychic'>
+        <label>Psychic</label>
+        <input type='checkbox' name='type' value='Fighting'>
+        <label>Fighting</label>
+        <input type='checkbox' name='type' value='Rock'>
+        <label>Rock</label>
+        <input type='checkbox' name='type' value='Ghost'>
+        <label>Ghost</label>
+        <input type='checkbox' name='type' value='Steel'>
+        <label>Steel</label>
+        <input type='checkbox' name='type' value='Ice'>
+        <label>Ice</label>
+        <input type='checkbox' name='type' value='Dark'>
+        <label>Dark</label>
+      </div>
+      <p>Is your pokemon a wonder?</p>
+      <input type='radio' name='isWonder' value='true'>
+      <label>Yes</label>
+      <input type='radio' name='isWonder' value='false'>
+      <label>No</label>
+      <p>When did you catch this pokemon?</p>
+      <input type='date' name='dateCaught'><br>
       <button type='submit'>add</button>
     </form>
-    
+    {{#pokemons}}
+    <div>
+      <p>Name: {{name}}</p>
+      <p>Wonder: {{isWonder}}</p>
+      <p>Date Caught: {{dateCaught}}</p>
+    </div>
+    <form method='post' action='/delete/{{_id}}'>
+      <button type='submit'>delete</button>
+    </form>
+    {{/pokemons}}
+    <script type="text/javascript" src='/main.js'></script>
   </body>
 </html>
