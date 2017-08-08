@@ -1,3 +1,13 @@
 img {
   width: 99vw;
 }
+
+.pokemon {
+  border: 1px solid lightgrey;
+  display: inline-block;
+  width: 20%;
+}
+
+.pokemon form {
+  display: inline-block;
+}

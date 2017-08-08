@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Pokemon</title>
+  </head>
+  <body>
+    {{#pokemons}}
+    <p>Name:</p>
+    <input type='text' name='name' value='{{name}}'>
+    <p>Wonder: {{isWonder}}</p>
+    <p>Date Caught: {{dateCaught}}</p>
+    {{/pokemons}}
+  </body>
+</html>

@@ -7,6 +7,14 @@ router.get('/', (req, res) => {
   })
 });
 
+router.get('/edit/:id', (req, res) => {
+  let pokemonId = req.params.id;
+
+  Pokemon.findById(pokemonId).then((results) => {
+    res.render('edit', { pokemons: results })
+  })
+});
+
 router.post('/', (req, res) => {
   let newPokemon = new Pokemon({
     name: req.body.name,

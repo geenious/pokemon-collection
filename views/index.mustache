@@ -63,14 +63,17 @@
       <button type='submit'>add</button>
     </form>
     {{#pokemons}}
-    <div>
+    <div class='pokemon'>
       <p>Name: {{name}}</p>
       <p>Wonder: {{isWonder}}</p>
       <p>Date Caught: {{dateCaught}}</p>
+      <form method='post' action='/delete/{{_id}}'>
+        <button type='submit'>delete</button>
+      </form>
+      <form method='get' action='/edit/{{_id}}'>
+        <button type='submit'>edit</button>
+      </form>
     </div>
-    <form method='post' action='/delete/{{_id}}'>
-      <button type='submit'>delete</button>
-    </form>
     {{/pokemons}}
     <script type="text/javascript" src='/main.js'></script>
   </body>
