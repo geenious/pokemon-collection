@@ -22,4 +22,15 @@ let monSchema = new Schema({
   }
 });
 
+
+monSchema.methods.getAllTypes = function(){
+  let allTypes = monSchema.statics.allTypes;
+
+  return allTypes.map((type) => {
+    return { name: type, selected: this.type.includes(type)}
+  })
+}
+
+monSchema.statics.allTypes = ['Grass', 'Poison', 'Fire', 'Flying', 'Water', 'Bug', 'Normal', 'Ground', 'Electric', 'Fairy', 'Psychic', 'Fighting', 'Rock', 'Ghost', 'Steel', 'Ice', 'Dark'];
+
 module.exports = mongoose.model('Pokemon', monSchema);

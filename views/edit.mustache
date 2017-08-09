@@ -6,10 +6,21 @@
   </head>
   <body>
     {{#pokemons}}
-    <p>Name:</p>
-    <input type='text' name='name' value='{{name}}'>
-    <p>Wonder: {{isWonder}}</p>
-    <p>Date Caught: {{dateCaught}}</p>
+    <form action="index.html" method="post">
+      <p>Name:</p>
+      <input type='text' name='name' value='{{name}}'>
+      <p>Wonder:</p>
+      <input type='radio' name="isWonder" value='true' {{#isWonder}}checked{{/isWonder}}><label>Yes</label>
+      <input type="radio" name="isWonder" value="false" {{#isNotWonder}}checked{{/isNotWonder}}><label>No</label>
+      <p>What types are your pokemon? (select up to 2)</p>
+      {{#types}}
+        <input type='checkbox' name='type' value='{{name}}' {{#selected}}checked{{/selected}}>
+        <label>{{name}}</label>
+      {{/types}}
+      <p>Date Caught:</p>
+      <input type="date" name="dateCaught" value="{{dateCaught}}">
+      <button type="submit">save</button>
+    </form>
     {{/pokemons}}
   </body>
 </html>

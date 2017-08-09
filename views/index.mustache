@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/main.css">
   </head>
   <body>
+    {{#allTypes}}{{.}}{{/allTypes}}
     <img src="./images/Pokemon.png" alt="catch em all">
     <h1>Submit a Pokemon</h1>
     <form action='/' method='post'>
@@ -66,6 +67,7 @@
     <div class='pokemon'>
       <p>Name: {{name}}</p>
       <p>Wonder: {{isWonder}}</p>
+      <p>Type: {{#type}} {{.}} {{/type}}</p>
       <p>Date Caught: {{dateCaught}}</p>
       <form method='post' action='/delete/{{_id}}'>
         <button type='submit'>delete</button>
