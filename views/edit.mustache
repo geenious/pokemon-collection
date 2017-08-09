@@ -6,7 +6,7 @@
   </head>
   <body>
     {{#pokemons}}
-    <form action="index.html" method="post">
+    <form action="/" method="post">
       <p>Name:</p>
       <input type='text' name='name' value='{{name}}'>
       <p>Wonder:</p>
@@ -18,7 +18,7 @@
         <label>{{name}}</label>
       {{/types}}
       <p>Date Caught:</p>
-      <input type="date" name="dateCaught" value="{{dateCaught}}">
+      <input type="date" name="dateCaught" value="{{dateCaught}}"><br>
       <button type="submit">save</button>
     </form>
     {{/pokemons}}
